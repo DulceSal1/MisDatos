@@ -3,10 +3,9 @@
 }
 
 .container {
-	max-width: 500px;
-	border: 1px solid lightgray;
-	border-radius: 8px;
-	box-shadow: 1px 14px 26px hsla(0, 0%, 0%, 0.2);
+	display: flex;
+	max-width: 500px;	
+	border: 1px;
 	margin: 16px;
 	padding: 8px;
 }
@@ -27,7 +26,7 @@
 }
 
 .container_title {
-	display:flex;	
+	flex:1;	
 	justify-content: space-between;
 	border-radius: 8px;
 	box-shadow: 1px 5px 5px hsla(0, 0%, 0%, 0.2);
@@ -48,27 +47,4 @@
 .icon:hover {
 	fill: darkred;
 }
-
-.container_boards {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: left;
-}
-.container_add {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 16px 48px;
-}
-
-.board_add {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	text-align: left;
-	padding: 16px 48px;
-}
-
 
