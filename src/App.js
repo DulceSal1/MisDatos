@@ -63,14 +63,13 @@ class App extends React.PureComponent {
 			draft.boards.forEach((item, i) => {		
 				arrayelem = arrayelem.concat(draft.boards[i].items.length);
 			});
-		    arrayelem=arrayelem.sort();console.log(arrayelem);	
+		    arrayelem=arrayelem.sort();	
 			let maxelem = arrayelem[2] ;
-			console.log(maxelem);
 			for (let a = 0; a < maxelem; a++) { 
 				let varx= (typeof draft.boards[0].items[a] === 'undefined') ? '0': draft.boards[0].items[a] ;
 				let vary1= (typeof draft.boards[1].items[a] === 'undefined') ? '0': draft.boards[1].items[a] ;
 				let vary2= (typeof draft.boards[2].items[a] === 'undefined') ? '0': draft.boards[2].items[a] ;
-				const element={xaxis:varx, y1axis:vary1, y2axis:vary2};
+				const element={x:varx, y1axis:vary1, y2axis:vary2};
 				array = array.concat(element);		
 				
 			}
@@ -94,12 +93,11 @@ class App extends React.PureComponent {
 			});
 			arrayelem=arrayelem.sort();
 			let maxelem = arrayelem[2] ;
-			console.log(maxelem);
 			for (let a = 0; a < maxelem; a++) { 
 				let varx= (typeof draft.boards[0].items[a] === 'undefined') ? '0': draft.boards[0].items[a] ;
 				let vary1= (typeof draft.boards[1].items[a] === 'undefined') ? '0': draft.boards[1].items[a] ;
 				let vary2= (typeof draft.boards[2].items[a] === 'undefined') ? '0': draft.boards[2].items[a] ;
-				const element={xaxis:varx, y1axis:vary1, y2axis:vary2};
+				const element={x:varx, y1axis:vary1, y2axis:vary2};
 				array = array.concat(element);		
 				
 			}
@@ -220,7 +218,7 @@ class App extends React.PureComponent {
 				</div>
 				
 				<div className={styles.chart}>
-						<SimpleBarChart data={graphic} x={'fecha'} y1={'y1axis'} y2={'y2axis'} y1Axis={'left'} y2Axis={'right'} />
+						<SimpleBarChart data={graphic} x={'x'} y1={'y1axis'} y2={'y2axis'} y1Axis={'left'} y2Axis={'right'} />
 					</div>
 
 
