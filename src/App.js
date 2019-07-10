@@ -10,6 +10,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import Table from './components/Table/Table';
 import SimpleBarChart from './components/Chart/SimpleBarChart';
+import Button from './components/Button/Button';
 
 class App extends React.PureComponent {
 	state = {
@@ -107,9 +108,27 @@ class App extends React.PureComponent {
 	};
 
 	onRemoveItem = (index, property) => {
+		let array=[];
+		let arrayelem=[];
+
 		const nextState = produce(this.state, (draft) => {
 		const indexBoard = draft.boards.findIndex(x => x.title ===property.title);
-			draft.boards[indexBoard].items.splice(index, 1);;
+			draft.boards[indexBoard].items.splice(index, 1);
+
+			draft.boards.forEach((item, i) => {		
+				arrayelem = arrayelem.concat(draft.boards[i].items.length);	
+			});
+			arrayelem=arrayelem.sort();
+			let maxelem = arrayelem[2] ;
+			for (let a = 0; a < maxelem; a++) { 
+				let varx= (typeof draft.boards[0].items[a] === 'undefined') ? '0': draft.boards[0].items[a] ;
+				let vary1= (typeof draft.boards[1].items[a] === 'undefined') ? '0': draft.boards[1].items[a] ;
+				let vary2= (typeof draft.boards[2].items[a] === 'undefined') ? '0': draft.boards[2].items[a] ;
+				const element={x:varx, y1axis:vary1, y2axis:vary2};
+				array = array.concat(element);		
+				
+			}
+			draft.graphic = array;
 		});
 		this.setState(nextState);
 	};
@@ -192,7 +211,8 @@ class App extends React.PureComponent {
 					</div>
 
 					<div className={styles.fileButton}>
-					<div className={styles.countBoards}>{this.state.boards.length} Elemento(s)</div>
+						<Button type={'file'} name={'PDF'} />
+						  <Button type={'file'} name={'Excel'} />
 					</div>
 				</div>
 

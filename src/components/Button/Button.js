@@ -13,18 +13,19 @@ export default class Button extends React.Component {
 		switch (type) {
 			case 'add':
 				return <IconAddMark className={styles.icon} />;
-
+			case 'file':
+				return '';
 			default:
 				return <IconRemoveMark className={styles.icon} />;
 		}
 	};
 
 	render() {
-		const { onClick, type, className } = this.props;
+		const { onClick, type, className,name} = this.props;
 		return (
 			<div className={styles.main}>
 				<button onClick={onClick} className={styles.button + ' ' + className}>
-					{this.selectIcon(type)}
+					{this.selectIcon(type)}{name}
 				</button>
 			</div>
 		);

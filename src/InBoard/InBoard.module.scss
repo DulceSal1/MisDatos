@@ -6,12 +6,12 @@
 	display: flex;
 	max-width: 500px;	
 	border: 1px;
-	margin: 16px;
-	padding: 8px;
+	margin: 4px;
+	padding: 0px;
 }
 .title {
-	font-size: 1.2rem;
-	font-weight: 400;
+	font-size: 1rem;
+	font-weight: 300;
 	text-align: center;
 }
 .group {
@@ -30,7 +30,7 @@
 	justify-content: space-between;
 	border-radius: 8px;
 	box-shadow: 1px 5px 5px hsla(0, 0%, 0%, 0.2);
-	margin: 16px;
+	margin: 8px;
 	padding: 8px;
 	color: darkred;
 }
